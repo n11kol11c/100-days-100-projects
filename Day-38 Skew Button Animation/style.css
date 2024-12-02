@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: rgb(95, 92, 92);
+}
+
+body {
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+}
+
+.btn {
+    height: 2cm;
+    width: 4cm;
+    border-radius: 10%;
+    border: none;
+    background: linear-gradient(0deg, rgba(63, 94, 251, 1) 0%, rgba(70, 135, 252, 1) 100%);
+    color: whitesmoke;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: rgba(63, 94, 251, 0.2);
+    transform: perspective(200px) rotateX(15deg);
+    will-change: transform;
+    transition: all 0.3s;
+    border-bottom: 2px solid rgba(70, 135, 252, 1);
+}
+
+.btn:hover {
+    transform: perspective(180px) rotateX(30deg) translateY(2px);
+    text-shadow: 0px 3px rgba(255, 255, 255, 0.2);
+}
+
+.btn:active {
+    transform: perspective(170px) rotateX(36deg) translateY(5px);
+}
