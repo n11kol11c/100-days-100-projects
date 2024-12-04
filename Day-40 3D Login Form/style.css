@@ -1,0 +1,160 @@
+/*
+    Author: Tkemza
+    MIT LICENSE 2024 (c)
+*/
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .glow {
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 
+                 0 0 40px #ff0080, 0 0 50px #ff0080, 0 0 75px #ff0080;
+  }
+
+button {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    padding: 10px;
+    border: 0.1px solid #031163;
+}
+
+.input {
+    width: 90%;
+    height: 20px;
+    position: relative;
+    padding: 10px;
+    border: 0.1px solid #031163;
+}
+
+button {
+    background: #031163;
+    border: none;
+}
+
+.wrapper {
+    position: relative;
+    transform: skewY(-14deg);
+}
+
+.wrapper li, button {
+    position: relative;
+    list-style: none;
+    width: 200px;
+    z-index: var(--i);
+    transition: 0.3s;
+    color: white;
+}
+
+.wrapper li::before, button::before {
+    position: absolute;
+    content: '';
+    background: #031163;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    height: 40px;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.3s;
+}
+
+.wrapper li::after, button::after {
+    position: absolute;
+    content: '';
+    background: #080354;
+    top: -40px;
+    left: 0;
+    width: 200px;
+    height: 40px;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 0.3s;
+}
+
+.wrapper li:nth-child(1)::after, .wrapper li:nth-child(1)::before {
+    background-color: #1FBFB8;
+}
+
+.wrapper li:nth-child(2)::after, .wrapper li:nth-child(2)::before {
+    background-color: #05716C;
+}
+
+.wrapper li:nth-child(3)::after, .wrapper li:nth-child(3)::before {
+    background-color: #1978A5;
+}
+
+li .input {
+    outline: none;
+    border: none;
+    color: black;
+}
+
+li .input::placeholder {
+    color: black;
+}
+
+li:nth-child(1) .input {
+    background: #1FBFB8;
+}
+
+li:nth-child(2) .input {
+    background: #05716C;
+}
+
+li:nth-child(3) .input {
+    background: #1978A5;
+}
+
+li:nth-child(1) .input:focus {
+    outline: none;
+    border: 3.5px solid #d8daf7;
+}
+
+li:nth-child(2) .input:focus {
+    outline: none;
+    border: 3.5px solid #c2c5f3;
+}
+
+li:nth-child(3) .input:focus {
+    outline: none;
+    border: 3.5px solid #989deb;
+}
+
+.wrapper li:hover, button:hover {
+    transform: translateX(-20px);
+}
+
+button:hover, button:hover::before, button:hover::after {
+    background: #00ccff;
+}
+
+button:active {
+    transform: translateX(0px);
+}
